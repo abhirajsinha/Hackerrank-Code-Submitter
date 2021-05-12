@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+</head>
+
+<body>
+    <input type="text">
+    <i class="fas fa-plus-circle"></i>
+    <h2>List of Tasks</h2>
+    <!-- list of tasks will appear -->
+    <ul></ul>
+    <script>
+        let addBtn = document.querySelector("i");
+
+        addBtn.addEventListener("click", function () {// jb v hm add button click kre to function chal jaaye like callback
+            // input data get 
+            // search
+            let inputElem = document.querySelector("input");// queryselecto similarily cheerioselector ki trh kaam krta h.document html ka first node hai . basically dom me hm pure page ko tree structure me dekhte hain.es line me hm input tag  ko select kr rhe hain
+            
+            let task = inputElem.value;   // yha se input box me jo v pda hai means value wo get kr lenge.
+            // console.log(task)
+            // creation
+            let liElem = document.createElement("li");   // yha  ek new node li tag ko create kr rhe hain.
+            liElem.innerText = task;     // es line me hm li tag me text ko add kr rhe  hain.
+            let ulElem=document.querySelector("ul"); // aur yha hm ul tag ko select kiye because ab hme us pr kaam  krna h
+            ulElem.appendChild(liElem);  // yha lielem jisme hm text add kiye the use ul tag se attach  kr append kr denge
+            inputElem.value="";    // yha aisa esliye kiya taaki agli baar hm jb v append kre to purana text ht ke only new text add ho.
+        })
+
+    </script>
+</body>
+
+</html>
